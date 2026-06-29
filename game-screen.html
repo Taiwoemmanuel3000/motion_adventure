@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <dialog id="custom-alert">
+  <div class="alert-content">
+    <h3 id="alert-title">Notification</h3>
+    <p id="alert-message"></p>
+    <button id="alert-close">OK</button>
+  </div>
+</dialog>
+
+    <section class="game-screen screen" id="game-screen" aria-labelledby="level-title">
+      <header class="top-hud glass-card">
+        <div class="stat"><span class="stat-icon ">❤️</span><span>Health</span><strong class = 'health'>0</strong></div>
+        <div class="stat"><span class="stat-icon ">⭐</span><span>Score</span><strong class="score">0</strong></div>
+        <div class="stat"><span class="stat-icon ">🪙</span><span>Coins</span><strong class="coin">0</strong></div>
+        <div class="stat"><span class="stat-icon ">💎</span><span>Crystal Pieces</span><strong class="crystal">0/8</strong></div>
+        <div class="mission-block">
+          <p id="level-title">Level 1: Velocity Woods</p>
+          <strong>Mission: Calculate the bridge crossing speed</strong>
+        </div>
+        <a class="icon-button pause-button" href="#pause-menu" aria-label="Pause game">Ⅱ</a>
+      </header>
+
+      <div class="game-layout">
+        <aside class="inventory-panel glass-card" aria-labelledby="inventory-title">
+          <h2 id="inventory-title">Inventory</h2>
+          <div class="inventory-grid">
+            <div class="inventory-slot " ><span>🪙</span><strong>Coins</strong><small>68 collected</small></div>
+            <div class="inventory-slot " ><span>🗝️</span><strong>Keys</strong><small>2 ancient keys</small></div>
+            <div class="inventory-slot " ><span>💎</span><strong>Crystal Pieces</strong><small>3 restored</small></div>
+            <div class="inventory-slot " ><span>🧪</span><strong>Potion</strong><small>1 energy vial</small></div>
+          </div>
+        </aside>
+
+        <section class="game-world glass-card" aria-label="Adventure game world">
+          <div class="world-tile river">River</div>
+          <div class="world-tile tree tree-one">Tree</div>
+          <div class="world-tile enemy enemy-one">Enemy</div>
+          <div class="world-tile castle">Castle</div>
+          <div class="world-tile rock rock-one">Rock</div>
+          <div class="world-tile bridge">Bridge</div>
+          <div class="world-tile chest">Treasure Chest</div>
+          <div class="world-tile door">Door</div>
+          <div class="world-tile npc">NPC</div>
+          <div class="world-tile player">Player</div>
+          <div class="world-tile enemy enemy-two">Enemy</div>
+          <div class="world-tile tree tree-two">Tree</div>
+          <div class="world-tile rock rock-two">Rock</div>
+        </section>
+      </div>
+
+      <section class="dialogue-box glass-card" aria-labelledby="npc-name">
+        <div>
+          <h2 id="npc-name">Professor Vector</h2>
+          <p>The river bridge only appears when your velocity answer is correct. Distance divided by time will reveal the path forward.</p>
+        </div>
+        <a class="secondary-button" id="show-qst" href="#physics-modal">Continue</a>
+      </section>
+    </section>
+
+    <section class="overlay modal-overlay" id="physics-modal" aria-labelledby="question-title">
+      <div class="physics-modal glass-card">
+        <a class="close-button" href="#game-screen" aria-label="Close question modal">×</a>
+        <p class="kicker">Physics Challenge</p>
+        <h2 id="question-title">Bridge of Velocity</h2>
+        <p class="question-text">
+          A hero travels 40 meters across the crystal bridge in 8 seconds. What is the hero's average speed?
+        </p>
+        <div class="answer-grid">
+          <button type="button" class="options btn-selected">3 m/s</button>
+          <button type="button" class="options btn-selected">5 m/s</button>
+          <button type="button" class="options btn-selected">8 m/s</button>
+          <button type="button" class="options btn-selected">32 m/s</button>
+        </div>
+        <button class="primary-button submit" type="button"><a class="result" href="#">Submit Answer</a></button>
+      </div>
+    </section>
+
+    <section class="overlay menu-overlay" id="pause-menu" aria-labelledby="pause-title">
+      <nav class="pause-menu glass-card" aria-label="Pause menu">
+        <h2 id="pause-title">Game Paused</h2>
+        <a class="primary-button" href="#game-screen">Resume</a>
+        <a class="menu-button" href="#splash-screen">Restart</a>
+        <a class="menu-button" href="#game-screen">Settings</a>
+        <a class="danger-button" href="#splash-screen">Quit</a>
+      </nav>
+    </section>
+
+    <section class="overlay end-screen game-over-screen" id="game-over-screen" aria-labelledby="game-over-title">
+      <div class="end-card glass-card">
+        <p class="kicker">Time Crystal Unstable</p>
+        <h2 id="game-over-title">Game Over</h2>
+        <p>Your energy faded before the last motion puzzle could be solved.</p>
+        <a class="primary-button" href="#game-screen">Restart</a>
+      </div>
+    </section>
+
+    <section class="overlay end-screen victory-screen" id="victory-screen" aria-labelledby="victory-title">
+      <div class="end-card glass-card">
+        <p class="kicker">Crystal Restored</p>
+        <h2 id="victory-title">Congratulations, Time Guardian!</h2>
+        <p>You recovered every crystal shard and mastered the motion trials.</p>
+        <a class="primary-button" href="#splash-screen">Play Again</a>
+      </div>
+    </section>
+    
+    <div id="popup" class="popup">
+
+      <div class="popup-box">
+
+          <h2 id="qstHeading">Physics Challenge</h2>
+
+          <p class="answer-res"></p>
+
+          <a href="#physics-modal" class="close primary-button">Close</a>
+
+      </div>
+
+    </div>
+    <script src="script.js" type="module" ></script>
+    <script src="maps/bridge.js"></script>
+</body>
+</html>

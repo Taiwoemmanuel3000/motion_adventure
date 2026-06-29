@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motion Adventure: The Lost Time Crystal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <section class="splash-screen screen" id="splash-screen" aria-labelledby="game-title">
+      <div class="splash-art" aria-hidden="true">
+        <div class="moon"></div>
+        <div class="crystal-beam"></div>
+        <div class="castle-silhouette"></div>
+        <div class="forest-line"></div>
+      </div>
+
+      <div class="splash-content glass-card">
+        <p class="kicker">Educational Physics RPG</p>
+        <h1 class="game-logo animated-title" id="game-title">
+          Motion Adventure
+          <span>The Lost Time Crystal</span>
+        </h1>
+        <p class="splash-copy">
+          Restore the fractured Time Crystal by solving motion challenges, gathering relics, and crossing the shadow realm before time stands still.
+        </p>
+        <a class="primary-button start-button" href="#popup">Start Game</a>
+      </div>
+    </section>
+    
+
+    <div id="popup" class="popup">
+
+      <div class="popup-box">
+
+          <h2>Motion Adventure</h2>
+
+          <p class="question-text">The world has lost the Time Crystal, causing time to freeze. <br> You play as a young explorer who must travel through different lands to recover the crystal pieces.<br> To progress, you must solve physics motion challenges.</p>
+
+          <a href="game-screen.html" class="close primary-button">Close</a>
+
+      </div>
+
+    </div>
+  <script src="maps/bridge.js"></script>
+  </main>
+</body>
+</html>
